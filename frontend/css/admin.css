@@ -1,0 +1,163 @@
+.admin-main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 25px;
+}
+
+.admin-main h2 {
+  color: rgb(255, 14, 139);
+  font-size: 32px;
+}
+
+.admin-section {
+  background: #1c1c1c;
+  padding: 30px;
+  border: 2px solid #333;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.admin-section h3 {
+  color: rgb(255, 14, 139);
+  margin-top: 0;
+}
+
+#job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#job-form input,
+#job-form select,
+#job-form textarea {
+  background: #111;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+}
+
+#job-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#job-form button,
+#jobs-table button {
+  background: rgb(255, 14, 139);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#job-form button:hover,
+#jobs-table button:hover {
+  background: #ff65b3;
+}
+
+.admin-section table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-section th,
+.admin-section td {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+}
+
+.admin-section th {
+  color: rgb(255, 14, 139);
+}
+
+#admin-message {
+  margin-top: 15px;
+}
+.admin-navigation {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.admin-navigation button,
+#company-form button,
+#category-form button,
+#companies-table button,
+#categories-table button {
+  background: rgb(255, 14, 139);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#company-form,
+#category-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#company-form input,
+#company-form textarea,
+#category-form input {
+  background: #111;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+}
+
+#company-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+#person-form,
+#admin-application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#person-form input,
+#admin-application-form input,
+#admin-application-form select,
+#admin-application-form textarea {
+  background: #111;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+}
+
+#admin-application-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#person-form button,
+#admin-application-form button,
+#people-table button,
+#applications-table button {
+  background: rgb(255, 14, 139);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}

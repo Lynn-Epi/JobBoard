@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobBoard | My Account</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/sign.css" />
+    <script src="js/account.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="site-name">JobBoard</h1>
+
+      <nav>
+        <ul class="main-header">
+          <li><a class="header-options" href="index.html">Home</a></li>
+          <li><a class="header-options" href="index.html#jobs">Jobs</a></li>
+          <li><a class="header-options" href="account.html">My Account</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-card">
+        <h2>My Account</h2>
+        <p>Personal Information</p>
+
+        <div class="account-detail">
+          <label>First Name</label>
+          <div class="account-row">
+            <span id="first_name"></span>
+            <button type="button" data-field="first_name">Change</button>
+          </div>
+        </div>
+
+        <div class="account-detail">
+          <label>Last Name</label>
+          <div class="account-row">
+            <span id="last_name"></span>
+            <button type="button" data-field="last_name">Change</button>
+          </div>
+        </div>
+
+        <div class="account-detail">
+          <label>Email</label>
+          <div class="account-row">
+            <span id="email"></span>
+            <button type="button" data-field="email">Change</button>
+          </div>
+        </div>
+
+        <div class="account-detail">
+          <label>Phone Number</label>
+          <div class="account-row">
+            <span id="phone_number"></span>
+            <button type="button" data-field="phone_number">Change</button>
+          </div>
+        </div>
+
+        <div class="account-detail">
+          <label>CV URL</label>
+          <div class="account-row">
+            <span id="cv_url"></span>
+            <button type="button" data-field="cv_url">Change</button>
+          </div>
+        </div>
+
+        <p id="form-message" class="form-message" role="status"></p>
+
+        <button type="button" id="logout-button" class="auth-button">
+          Log Out
+        </button>
+      </section>
+      <dialog id="edit-dialog">
+        <form id="edit-form">
+          <h2 id="edit-title">Change</h2>
+
+          <input id="edit-input" required />
+
+          <div class="edit-buttons">
+            <button type="button" id="cancel-button">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+
+    <footer>
+      <h4>Contact Us</h4>
+      <p>Email: contact@jobboard.example</p>
+    </footer>
+  </body>
+</html>

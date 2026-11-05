@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobBoard | Find Your Next Job</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="site-name">JobBoard</h1>
+
+      <nav>
+        <ul class="main-header">
+          <li><a class="header-options" href="index.html">Home</a></li>
+          <li><a class="header-options" href="job.html">Jobs</a></li>
+          <li><a class="header-options" href="account.html">My Account</a></li>
+
+          <li><a class="header-options" href="signIn.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="welcome-section">
+        <h2>Find Your Next Opportunity</h2>
+        <p>
+          Explore job opportunities across different industries and find a
+          position that fits your skills.
+        </p>
+      </section>
+      <section id="jobs" class="jobs-section">
+        <h2>Available Jobs</h2>
+        <div class="job-container" id="job-container"></div>
+      </section>
+
+      <section id="job-details" class="job-details" hidden>
+        <button type="button" id="back-button">Back to Jobs</button>
+
+        <div class="details-layout">
+          <div class="details-description">
+            <h2 id="detail-title"></h2>
+            <h3 id="detail-company"></h3>
+            <p id="detail-description"></p>
+          </div>
+
+          <div class="details-info">
+            <p><strong>Location:</strong> <span id="detail-location"></span></p>
+            <p><strong>Salary:</strong> <span id="detail-salary"></span></p>
+            <p>
+              <strong>Weekly Hours:</strong> <span id="detail-hours"></span>
+            </p>
+
+            <button type="button" id="apply-button">Apply</button>
+          </div>
+        </div>
+
+        <form id="application-form" hidden>
+          <h3>Apply for this Job</h3>
+
+          <div id="guest-fields" hidden>
+            <input id="apply-first-name" placeholder="First Name" />
+            <input id="apply-last-name" placeholder="Last Name" />
+            <input id="apply-email" type="email" placeholder="Email" />
+            <input id="apply-phone" placeholder="Phone Number" />
+          </div>
+
+          <textarea
+            id="apply-message"
+            placeholder="Application Message"
+            required
+          ></textarea>
+
+          <button type="submit">Submit Application</button>
+          <p id="application-feedback" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <h4>Contact Us</h4>
+      <p>Email: contact@jobboard.example</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobBoard | Admin</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script src="js/admin.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="site-name">JobBoard</h1>
+
+      <nav>
+        <ul class="main-header">
+          <li><a class="header-options" href="index.html">Home</a></li>
+          <li><a class="header-options" href="index.html#jobs">Jobs</a></li>
+          <li><a class="header-options" href="account.html">My Account</a></li>
+          <li><a class="header-options" href="signIn.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="admin-main" hidden>
+      <h2>Admin Dashboard</h2>
+
+      <div class="admin-navigation">
+        <button type="button" data-section="jobs-management">Jobs</button>
+        <button type="button" data-section="companies-management">
+          Companies
+        </button>
+        <button type="button" data-section="categories-management">
+          Categories
+        </button>
+        <button type="button" data-section="people-management">People</button>
+        <button type="button" data-section="applications-management">
+          Applications
+        </button>
+      </div>
+
+      <div id="jobs-management">
+        <section class="admin-section">
+          <h3>Manage Jobs</h3>
+
+          <form id="job-form">
+            <input type="hidden" id="job-id" />
+
+            <label for="job-title">Job Title</label>
+            <input id="job-title" required />
+
+            <label for="job-description">Description</label>
+            <textarea id="job-description" required></textarea>
+
+            <label for="job-company">Company</label>
+            <select id="job-company" required></select>
+
+            <label for="job-category">Category</label>
+            <select id="job-category" required></select>
+
+            <label for="job-location">Location</label>
+            <input id="job-location" />
+
+            <label for="job-salary">Salary</label>
+            <input id="job-salary" type="number" />
+
+            <label for="job-hours">Weekly Hours</label>
+            <input id="job-hours" type="number" />
+
+            <button type="submit" id="save-job">Add Job</button>
+            <button type="button" id="cancel-edit" hidden>Cancel Edit</button>
+          </form>
+
+          <p id="admin-message" role="status"></p>
+        </section>
+
+        <section class="admin-section">
+          <h3>Existing Jobs</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Job Title</th>
+                <th>Company ID</th>
+                <th>Location</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="jobs-table"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="companies-management" hidden>
+        <section class="admin-section">
+          <h3>Manage Companies</h3>
+
+          <form id="company-form">
+            <input type="hidden" id="company-id" />
+
+            <label for="company-name">Company Name</label>
+            <input id="company-name" required />
+
+            <label for="company-description">Description</label>
+            <textarea id="company-description"></textarea>
+
+            <label for="company-email">Email</label>
+            <input id="company-email" type="email" />
+
+            <label for="company-industry">Industry</label>
+            <input id="company-industry" />
+
+            <label for="company-location">Location</label>
+            <input id="company-location" />
+
+            <label for="company-website">Website</label>
+            <input id="company-website" type="url" />
+
+            <button type="submit" id="save-company">Add Company</button>
+            <button type="button" id="cancel-company" hidden>
+              Cancel Edit
+            </button>
+          </form>
+
+          <p id="company-message" role="status"></p>
+        </section>
+
+        <section class="admin-section">
+          <h3>Existing Companies</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="companies-table"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="categories-management" hidden>
+        <section class="admin-section">
+          <h3>Manage Categories</h3>
+
+          <form id="category-form">
+            <input type="hidden" id="category-id" />
+
+            <label for="category-name">Category Name</label>
+            <input id="category-name" required />
+
+            <button type="submit" id="save-category">Add Category</button>
+            <button type="button" id="cancel-category" hidden>
+              Cancel Edit
+            </button>
+          </form>
+
+          <p id="category-message" role="status"></p>
+        </section>
+
+        <section class="admin-section">
+          <h3>Existing Categories</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="categories-table"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="people-management" hidden>
+        <section class="admin-section">
+          <h3>Manage People</h3>
+
+          <form id="person-form">
+            <input type="hidden" id="person-id" />
+
+            <label for="person-first-name">First Name</label>
+            <input id="person-first-name" required />
+
+            <label for="person-last-name">Last Name</label>
+            <input id="person-last-name" required />
+
+            <label for="person-email">Email</label>
+            <input id="person-email" type="email" required />
+
+            <label for="person-phone">Phone Number</label>
+            <input id="person-phone" />
+
+            <label for="person-cv">CV URL</label>
+            <input id="person-cv" type="url" />
+
+            <button type="submit" id="save-person">Add Person</button>
+            <button type="button" id="cancel-person" hidden>Cancel Edit</button>
+          </form>
+
+          <p id="person-message" role="status"></p>
+        </section>
+
+        <section class="admin-section">
+          <h3>Existing People</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="people-table"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="applications-management" hidden>
+        <section class="admin-section">
+          <h3>Manage Applications</h3>
+
+          <form id="admin-application-form">
+            <input type="hidden" id="admin-application-id" />
+
+            <label for="application-person">Applicant</label>
+            <select id="application-person" required></select>
+
+            <label for="application-job">Job</label>
+            <select id="application-job" required></select>
+
+            <label for="application-message">Application Message</label>
+            <textarea id="application-message" required></textarea>
+
+            <button type="submit" id="save-application">Add Application</button>
+            <button type="button" id="cancel-application" hidden>
+              Cancel Edit
+            </button>
+          </form>
+
+          <p id="application-admin-message" role="status"></p>
+        </section>
+
+        <section class="admin-section">
+          <h3>Existing Applications</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Applicant</th>
+                <th>Job</th>
+                <th>Message</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applications-table"></tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <h4>Contact Us</h4>
+      <p>Email: contact@jobboard.example</p>
+    </footer>
+  </body>
+</html>
